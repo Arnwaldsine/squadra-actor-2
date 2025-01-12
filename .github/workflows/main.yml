@@ -14,5 +14,5 @@ jobs:
             - name: Invoke deployment hook for squadra-actor-2
               uses: distributhor/workflow-webhook@v1
               env:
-                webhook_url: ${{ secrets.GIGSBERG_LATEST_BUILD_URL }}
+                webhook_url: ${{ secrets.SQ_SCRAPER_LATEST_BUILD_URL }}
                 webhook_secret: ${{ secrets.APIFY_TOKEN }}
