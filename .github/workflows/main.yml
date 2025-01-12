@@ -1,0 +1,18 @@
+name: Build latest version squadra-actor-2
+on:
+    push:
+        branches: 
+            - main
+
+jobs:
+    build_from_repository:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out code
+              uses: actions/checkout@v3
+
+            - name: Invoke deployment hook for squadra-actor-2
+              uses: distributhor/workflow-webhook@v1
+              env:
+                webhook_url: ${{ secrets.GIGSBERG_LATEST_BUILD_URL }}
+                webhook_secret: ${{ secrets.APIFY_TOKEN }}
